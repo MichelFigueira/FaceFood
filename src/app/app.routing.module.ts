@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { PhotoListComponent } from './timeline/photo-list/photo-list.component';
+import { PhotoListComponent } from './pages/timeline/photo-list/photo-list.component';
+import { PhotoDetailsComponent } from './pages/timeline/photo-details/photo-details.component';
 
 const routes: Routes = [
   {
@@ -17,15 +18,19 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)
   },
   {
     path: 'create',
-    loadChildren: () => import('./create/create.module').then(m => m.CreateModule)
+    loadChildren: () => import('./pages/create/create.module').then(m => m.CreateModule)
   },
   {
     path: 'user/:userName',
     component: PhotoListComponent,
+  },
+  {
+    path: 'details/:photoId',
+    component: PhotoDetailsComponent,
   },
   {
     path: '**',

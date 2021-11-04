@@ -1,13 +1,14 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Photo } from './photo';
-import{ GlobalConstants } from './../../common/global-constants'
+import { Photo } from '../models/photo';
+import{ GlobalConstants } from '../common/global-constants'
+import { PhotoComment } from '../models/photo-comment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PhotoService {
+export class TimelineService {
 
   constructor(private http: HttpClient) {}
 
@@ -22,6 +23,15 @@ export class PhotoService {
 
     return this.http
       .get<Photo[]>(GlobalConstants.API_URL + '/' + userName + '/photos', { params: params });
+  }
+
+  findById(photoId: number) {
+    return this.http.get<Photo>(GlobalConstants.API_URL + '/photos/' + photoId);
+  }
+
+  getComments(photoId: number) {
+      return this.http.get<PhotoComment[]>(
+        GlobalConstants.API_URL + '/photos/' + photoId + '/comments');
   }
 
 }

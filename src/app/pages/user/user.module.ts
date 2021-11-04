@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthComponent } from './auth.component';
+import { UserComponent } from './user.component';
 import { SignUpComponent } from './signup/signup.component';
-import { SharedModule } from './../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { SignInComponent } from './signin/signin.component';
-import { AuthRoutingModule } from './auth.routing.module';
+import { UserRoutingModule } from './user.routing.module';
 
 @NgModule({
   declarations: [
-    AuthComponent,
+    UserComponent,
     SignInComponent,
     SignUpComponent
   ],
@@ -21,9 +21,9 @@ import { AuthRoutingModule } from './auth.routing.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    AuthRoutingModule
+    UserRoutingModule
   ],
   exports: [],
   providers: []
 })
-export class AuthModule { }
+export class UserModule { }

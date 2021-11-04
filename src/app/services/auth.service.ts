@@ -4,9 +4,9 @@ import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import jwtDecode from 'jwt-decode';
 
-import { GlobalConstants } from './../common/global-constants';
-import { TokenService } from './../core/token/token.service';
-import { User } from './user';
+import { GlobalConstants } from '../common/global-constants';
+import { TokenService } from './token.service';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'

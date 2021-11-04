@@ -1,4 +1,4 @@
-import { PhotoAddService } from './photo-add.service';
+import { PhotoAddService } from '../../../services/photo-add.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

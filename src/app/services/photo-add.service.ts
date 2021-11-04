@@ -1,4 +1,4 @@
-import { GlobalConstants } from './../../common/global-constants';
+import { GlobalConstants } from '../common/global-constants';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 

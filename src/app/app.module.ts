@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app.routing.module';
 import { SharedModule } from './shared/shared.module';
-import { TimelineModule } from './timeline/timeline.module';
+import { TimelineModule } from './pages/timeline/timeline.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { RequestInterceptor } from './core/token/request.interceptor';
+import { HomeComponent } from './pages/home/home.component';
+import { RequestInterceptor } from './auth/request.interceptor';
 
 @NgModule({
   declarations: [

@@ -2,9 +2,9 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewCh
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { PlatformDetectorService } from 'src/app/core/plataform-detector/platform-detector.service';
-import { SignUpService } from './signup.service';
-import { User } from 'src/app/auth/user';
+import { PlatformDetectorService } from 'src/app/services/platform-detector.service';
+import { SignUpService } from '../../../services/signup.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-signup',
