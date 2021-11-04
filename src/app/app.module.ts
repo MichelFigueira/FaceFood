@@ -7,22 +7,22 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app.routing.module';
 import { SharedModule } from './shared/shared.module';
 import { TimelineModule } from './timeline/timeline.module';
-import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    HomeComponent
+   ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     TimelineModule,
-    AuthModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   exports: [],
   providers: [],
