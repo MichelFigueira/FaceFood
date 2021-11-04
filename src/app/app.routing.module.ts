@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then(m => m.CreateModule)
+  },
+  {
     path: 'user/:userName',
     component: PhotoListComponent,
   },

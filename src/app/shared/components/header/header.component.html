@@ -3,6 +3,9 @@
     <a class="navbar-brand">FaceFood</a>
 
     <div *ngIf="(user$) | async as user; else login">
+      <a [routerLink]="['create', 'add']">
+        <i class="fa fa-plus-circle fa-2x m-1"></i>
+      </a>
       <i class="fa fa-user-circle mr-1"></i>
       <a class="mr-1">{{ user.name }}</a>
       <a (click)="logout()">(Logout)</a>

@@ -1,10 +1,8 @@
-import { AuthService } from 'src/app/auth/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SignUpService } from './signup/signup.service';
 import { AuthComponent } from './auth.component';
 import { SignUpComponent } from './signup/signup.component';
 import { SharedModule } from './../shared/shared.module';
@@ -25,10 +23,7 @@ import { AuthRoutingModule } from './auth.routing.module';
     SharedModule,
     AuthRoutingModule
   ],
-  exports: [
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  exports: [],
   providers: []
 })
 export class AuthModule { }
