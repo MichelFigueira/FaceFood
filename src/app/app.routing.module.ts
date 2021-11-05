@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PhotoListComponent } from './pages/timeline/photo-list/photo-list.component';
-import { PhotoDetailsComponent } from './pages/timeline/photo-details/photo-details.component';
 
 const routes: Routes = [
   {
@@ -15,6 +14,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { title: 'FaceFood - Home' }
   },
   {
     path: 'auth',
@@ -25,16 +25,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/create/create.module').then(m => m.CreateModule)
   },
   {
-    path: 'user/:userName',
-    component: PhotoListComponent,
+    path: 'details',
+    loadChildren: () => import('./pages/details/details.module').then(m => m.DetailsModule)
   },
   {
-    path: 'details/:photoId',
-    component: PhotoDetailsComponent,
+    path: 'user/:userName',
+    component: PhotoListComponent,
+    data: { title: 'FaceFood - Timeline' }
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+    data: { title: 'FaceFood - Not Found' }
   },
   {
     path: '**',
-    component: NotFoundComponent
+    redirectTo: 'not-found'
   }
 ];
 

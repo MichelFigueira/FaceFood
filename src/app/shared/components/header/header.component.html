@@ -7,7 +7,7 @@
         <i class="fa fa-plus-circle fa-2x m-1"></i>
       </a>
       <i class="fa fa-user-circle mr-1"></i>
-      <a class="mr-1">{{ user.name }}</a>
+      <a [routerLink]="['user', user.name]" class="mr-1">{{ user.name }}</a>
       <a (click)="logout()">(Logout)</a>
     </div>
 
@@ -18,4 +18,9 @@
     </ng-template>
 
   </nav>
+
+  <div class="fixed-top">
+    <app-alert></app-alert>
+  </div>
+
 </header>

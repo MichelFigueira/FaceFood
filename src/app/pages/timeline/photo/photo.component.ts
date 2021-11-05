@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { GlobalConstants } from 'src/app/common/global-constants';
+import { environment } from '../../../../environments/environment'
+
+const API = environment.apiUrl
 
 @Component({
   selector: 'app-photo',
@@ -14,7 +16,7 @@ export class PhotoComponent {
 
   @Input() set url(url: string) {
     if(!url.startsWith('data')) {
-      this._url = GlobalConstants.API_URL + '/imgs/' + url;
+      this._url = API + '/imgs/' + url;
     } else {
       this._url = url;
     }

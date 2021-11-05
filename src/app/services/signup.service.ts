@@ -2,10 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { debounceTime, first, map, switchMap } from 'rxjs/operators';
+import { environment } from '../../environments/environment'
 
-import { GlobalConstants } from '../common/global-constants';
 import { User } from 'src/app/models/user';
 
+const API = environment.apiUrl
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class SignUpService {
   constructor(private http: HttpClient) { }
 
   checkUserName(userName: string) {
-    return this.http.get(GlobalConstants.API_URL + '/user/exists/' + userName);
+    return this.http.get(API + '/user/exists/' + userName);
   }
 
   checkUserNameTaken() {
@@ -31,7 +32,7 @@ export class SignUpService {
   }
 
   signUp(newUser: User) {
-    return this.http.post(GlobalConstants.API_URL + '/user/signup', newUser);
+    return this.http.post(API + '/user/signup', newUser);
   }
 
 }

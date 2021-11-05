@@ -1,7 +1,8 @@
-import { GlobalConstants } from '../common/global-constants';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment'
 
+const API = environment.apiUrl
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +17,14 @@ export class PhotoAddService {
     formData.append('allowComments', allowComments ? 'true' : 'false');
     formData.append('imageFile', file);
 
-    return this.http.post(GlobalConstants.API_URL + '/photos/upload', formData);
+    return this.http.post(
+        API + '/photos/upload',
+        formData,
+        {
+          observe: 'events',
+          reportProgress: true
+        }
+    );
   }
 
 }

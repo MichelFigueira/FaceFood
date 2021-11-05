@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment'
 import jwtDecode from 'jwt-decode';
 
-import { GlobalConstants } from '../common/global-constants';
 import { TokenService } from './token.service';
 import { User } from '../models/user';
+
+const API = environment.apiUrl
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,7 @@ export class AuthService {
   authenticate(userName: string, password: string) {
     return this.http
       .post(
-        GlobalConstants.API_URL + '/user/login',
+        API + '/user/login',
         { userName, password },
         { observe: 'response' }
       )

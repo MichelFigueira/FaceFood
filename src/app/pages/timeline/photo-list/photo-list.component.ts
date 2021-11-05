@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { TimelineService } from '../../../services/timeline.service';
+import { PhotoService } from '../../../services/photo.service';
 
 @Component({
   selector: 'app-photo-list',
@@ -16,7 +16,7 @@ export class PhotoListComponent implements OnInit {
   userName: string = '';
 
   constructor(
-    private timelineService: TimelineService,
+    private photoService: PhotoService,
     private activatedRoute: ActivatedRoute
     ) {}
 
@@ -27,11 +27,11 @@ export class PhotoListComponent implements OnInit {
 
   getPhotos() {
     const userName = this.activatedRoute.snapshot.params.userName;
-    this.timelineService.listFromUserPaginated(userName, 1).subscribe(photos => this.photos = photos);
+    this.photoService.listFromUserPaginated(userName, 1).subscribe(photos => this.photos = photos);
   }
 
   load() {
-    this.timelineService
+    this.photoService
     .listFromUserPaginated(this.userName, ++this.currentPage)
     .subscribe(photos => {
       this.photos.push(...photos);

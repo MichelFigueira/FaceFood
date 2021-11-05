@@ -16,7 +16,8 @@ const routes: Routes = [
       },
       {
         path: 'add',
-        component: PhotoAddComponent
+        component: PhotoAddComponent,
+        data: { title: 'FaceFood - New Photo' }
       }
     ]
   }

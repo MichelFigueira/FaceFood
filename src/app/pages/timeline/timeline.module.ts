@@ -7,14 +7,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { LoadButtonComponent } from './load-button/load-button.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoComponent } from './photo/photo.component';
-import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 
 @NgModule({
   declarations: [
     PhotoComponent,
     PhotoListComponent,
     LoadButtonComponent,
-    PhotoDetailsComponent
   ],
   imports: [
     CommonModule,

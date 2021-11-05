@@ -18,11 +18,13 @@ const routes: Routes = [
       },
       {
         path: 'signin',
-        component: SignInComponent
+        component: SignInComponent,
+        data: { title: 'FaceFood - Sign In' }
       },
       {
         path: 'signup',
         component: SignUpComponent,
+        data: { title: 'FaceFood - Sign Up' }
       },
     ]
   },
