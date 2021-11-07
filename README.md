@@ -1,5 +1,9 @@
 # FaceFood
 
+Open source project for Angular testing 🧟‍♂️
+
+You can download and use the API Test through <a href="https://github.com/MichelFigueira/FaceFood-APITest">this repository</a>.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
 ## Development server
