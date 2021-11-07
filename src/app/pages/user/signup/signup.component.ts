@@ -40,12 +40,14 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   signUp() {
-    const User = this.signupForm.getRawValue() as User;
-    this.signUpService
-        .signUp(User)
-        .subscribe(
-            () => this.router.navigate([''])
-        );
+    if(this.signupForm.valid && !this.signupForm.pending) {
+      const User = this.signupForm.getRawValue() as User;
+      this.signUpService
+          .signUp(User)
+          .subscribe(
+              () => this.router.navigate([''])
+          );
+    }
   }
 
 }

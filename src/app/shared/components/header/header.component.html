@@ -1,14 +1,15 @@
 <header>
   <nav class="navbar navbar-light bg-white">
     <a class="navbar-brand">
-      <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+      <i tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
       FaceFood
     </a>
     <app-menu #menu>
-      <ul>
-        <li>Menu item 1</li>
-        <li>Menu item 2</li>
-      </ul>
+      <ul class="list-unstyled">
+        <li>
+          <a IsLogged (click)="menu.toggle()" [routerLink]="['create','add']">Upload</a>
+        </li>
+    </ul>
     </app-menu>
 
     <div *ngIf="(user$) | async as user; else login">

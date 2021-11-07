@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PhotoListComponent } from './pages/timeline/photo-list/photo-list.component';
+import { GlobalErrorComponent } from './shared/components/global-error/global-error.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'not-found',
     component: NotFoundComponent,
     data: { title: 'FaceFood - Not Found' }
+  },
+  {
+    path: 'error',
+    component: GlobalErrorComponent,
+    data: { title: 'FaceFood - Error' }
   },
   {
     path: '**',
